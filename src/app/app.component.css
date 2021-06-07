@@ -1,0 +1,9 @@
+.card {
+  background: dodgerblue;
+}
+.card-header {
+  background: dodgerblue;
+  font-size: 25px;
+  font-max-size: 25px;
+  font-weight: bold;
+}
