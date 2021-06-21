@@ -1,0 +1,19 @@
+<form>
+  <h4>Dodaj nowy produkt: </h4>
+  <div class="form-group">
+    <label for="name">Nazwa: </label>
+    <input [(ngModel)]="name" class="form-control" id="name" name="name" placeholder="Product name..." type="text">
+  </div>
+  <div class="form-group">
+    <label for="price">Cena: </label>
+    <input [(ngModel)]="price" class="form-control" id="price" name="price" type="text">
+  </div>
+  <div class="form-group">
+    <label for="amount">Ilość: </label>
+    <input [(ngModel)]="amount" class="form-control" id="amount" name="amount" type="text">
+  </div>
+  <app-button (btnClick)="addProduct()" color="lightblue" text="Submit"></app-button>
+  <div>
+    <a class="button_click" routerLink="/product-list" routerLinkActive="active">Powrot do Listy produktów</a>
+  </div>
+</form>

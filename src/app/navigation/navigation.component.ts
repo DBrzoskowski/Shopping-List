@@ -6,10 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
-  navTitle: string = "Shopping List";
-  navHome: string = "Home";
-  navProductList: string = "Product List";
-  navProductPool: string = "Product Pool";
 
   constructor() { }
 

@@ -1,1 +1,49 @@
-<p>product-list works!</p>
+  <div class='card-body'>
+
+    <div class='table-responsive'>
+      <table *ngIf='products.length'
+             class='table'>
+        <thead>
+        <tr>
+          <th>Produkt</th>
+          <th>Ilość</th>
+          <th>Cena / 1 prod.</th>
+          <th>Całkowita cena</th>
+          <th>Edycja</th>
+          <th>Usuwanie</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let product of products' [class.selected]="product === productToSend">
+          <td>{{ product.name | lowercase }}</td>
+          <td>{{ product.amount }}</td>
+          <td>{{ product.price | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
+          <td>{{product.totalPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
+          <td>
+            <fa-icon
+              (click)="onEdit(product)"
+              [icon]="faPencil">
+            </fa-icon>
+          </td>
+          <td>
+            <fa-icon
+              (click)="onDelete(product)"
+              [icon]="faTimes">
+            </fa-icon>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="flex-container">
+      <a class="button_click" routerLink="/product-add" routerLinkActive="active">Dodaj nowy produkt</a>
+      <div class="flex-child green">
+        <app-product-edit (onEditProduct)="editSelectedProduct($event)"
+                          [selectedProduct]="productToSend"></app-product-edit>
+      </div>
+    </div>
+  </div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>
