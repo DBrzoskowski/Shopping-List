@@ -1,0 +1,41 @@
+<div *ngIf='lists.length' class="container">
+  <div *ngFor='let list of lists, let i = index, trackBy:getListUsingTrackBy' class='table-responsive listItemTable'>
+    <div class="container flex-container">
+      <div class="flex-child">
+        <h6>Nazwa listy: <b>{{list.title}}</b></h6>
+      </div>
+      <div>
+        <div class="flex-child">
+          <div class="deleteButton">
+            <h6>Delete List: </h6>
+          </div>
+          <fa-icon
+            (click)="onDelete(list)"
+            [icon]="faTimes"
+            [ngStyle]="{ color: 'black' }">
+          </fa-icon>
+        </div>
+      </div>
+    </div>
+    <table class='table'>
+      <thead>
+      <tr>
+        <th>Produkt</th>
+        <th>Ilość</th>
+        <th>Cena / 1 prod.</th>
+        <th>Całkowita cena</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of list.products">
+        <td>{{ product.name | lowercase }}</td>
+        <td>{{ product.amount }}</td>
+        <td>{{ product.price | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
+        <td>{{product.totalPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <h6>Total Price: {{list.totalPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</h6>
+  </div>
+</div>
+

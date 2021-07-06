@@ -5,7 +5,7 @@
       "name": "Chleb",
       "price": 1.25,
       "amount": 2,
-      "totalPrice": 2.50
+      "totalPrice": 2.5
     },
     {
       "id": 4,
@@ -38,15 +38,22 @@
   ],
   "lists": [
     {
-      "title": "Przykladowa lista",
-      "id": 1,
+      "title": "test",
+      "id": 4,
       "products": [
         {
-          "id": 3,
-          "name": "Chleb",
-          "price": 1.25,
-          "amount": 2,
-          "totalPrice": 1.25
+          "id": 4,
+          "name": "Laczki",
+          "price": 20.58,
+          "amount": 1,
+          "totalPrice": 20.58
+        },
+        {
+          "id": 4,
+          "name": "Laczki",
+          "price": 20.58,
+          "amount": 1,
+          "totalPrice": 20.58
         },
         {
           "id": 4,
@@ -61,11 +68,16 @@
           "price": 9.78,
           "amount": 1,
           "totalPrice": 9.78
+        },
+        {
+          "id": 6,
+          "name": "Mleko",
+          "price": 0.69,
+          "amount": 1,
+          "totalPrice": 0.69
         }
       ],
-      "selectedPrice": 0,
-      "unselectedPrice": 3.14,
-      "totalPrice": 3.14
+      "totalPrice": 72.21
     }
   ]
 }

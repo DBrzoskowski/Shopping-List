@@ -1,0 +1,36 @@
+<div class="table-responsive" cdkDropList (cdkDropListDropped)="drop($event)">
+  <label for="title">Title: </label>
+  <input [(ngModel)]="title" class="form-control" id="title" placeholder="List tile" type="text">
+  <table class='table'>
+    <thead>
+    <tr>
+      <th>Wybrany</th>
+      <th>Produkt</th>
+      <th>Ilość</th>
+      <th>Cena / 1 prod.</th>
+      <th>Całkowita kwota</th>
+      <th>Usuwanie</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr cdkDrag *ngFor="let product of products; let i = index" [class.selected]="products[i].isSelected == true">
+      <td><input (change)="selectProduct($event, i)" id="checkbox" name="checkbox" type="checkbox" value="unchecked"></td>
+      <td>{{ product.name | lowercase }}</td>
+      <td>{{ product.amount }}</td>
+      <td>{{ product.price | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
+      <td>{{product.totalPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
+      <td>
+        <fa-icon
+          (click)="onDelete(i)"
+          [icon]="faTimes"
+          [ngStyle]="{ color: 'red' }">
+        </fa-icon>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <h6>Cena całkowita: {{totalPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</h6>
+  <h6>Cena zaznaczonych produktów: {{selectedPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</h6>
+  <h6>Cena niezaznaczonych produktów: {{unselectedPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</h6>
+  <app-button (btnClick)="addList()" color="lightblue" text="Dodaj listę zakupów"></app-button>
+</div>

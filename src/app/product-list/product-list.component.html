@@ -18,7 +18,7 @@
           <td>{{ product.name | lowercase }}</td>
           <td>{{ product.amount }}</td>
           <td>{{ product.price | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
-          <td>{{product.totalPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
+          <td>{{ product.totalPrice | currency: 'PLN ': 'symbol': '1.2-2'}}</td>
           <td>
             <fa-icon
               (click)="onEdit(product)"

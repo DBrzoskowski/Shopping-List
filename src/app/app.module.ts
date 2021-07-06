@@ -12,7 +12,12 @@ import { ProductListItemComponent } from './product-list-item/product-list-item.
 import {HttpClientModule} from "@angular/common/http";
 import { ProductEditComponent } from './product-edit/product-edit.component';
 import {FontAwesomeModule} from "@fortawesome/angular-fontawesome";
-import { ParentListComponent } from './parent-list/parent-list.component';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ShoppingAddComponent } from './shopping-add/shopping-add.component';
+import { ShoppingItemComponent } from './shopping-item/shopping-item.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { HomeComponent } from './home/home.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,20 +31,27 @@ import { ParentListComponent } from './parent-list/parent-list.component';
     ButtonComponent,
     ProductListItemComponent,
     ProductEditComponent,
-    ParentListComponent
+    ShoppingListComponent,
+    ShoppingAddComponent,
+    ShoppingItemComponent,
+    HomeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
+      {path: 'home', component: HomeComponent},
       {path: 'product-list', component: ProductListComponent},
       {path: 'product-add', component: ProductAddComponent},
-      {path: '', redirectTo: '/', pathMatch: 'full'},
-      {path: '**', redirectTo: '/', pathMatch: 'full'}
+      {path: 'shopping-list', component: ShoppingListComponent},
+      {path: '', redirectTo: 'home', pathMatch: 'full'},
+      {path: '**', redirectTo: 'home', pathMatch: 'full'}
     ]),
     FormsModule,
     FontAwesomeModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

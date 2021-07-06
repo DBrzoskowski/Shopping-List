@@ -1,0 +1,25 @@
+a.button_click{
+  display:inline-block;
+  padding:0.3em 1.2em;
+  margin:0 0.3em 0.3em 0;
+  border-radius:0.3em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  color:black;
+  background-color:lightblue;
+  text-align:center;
+  transition: all 0.2s;
+  float:right;
+
+}
+a.button_click:hover{
+  background-color:lightskyblue;
+}
+@media all and (max-width:30em){
+  a.button_click{
+    display:block;
+    margin:0.2em auto;
+  }
+}
